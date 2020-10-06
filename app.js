@@ -28,9 +28,19 @@ function switchColorMode() {
 	for (const img of imgTags) {
 		img.classList.toggle('img-color');
 	}
+
 }
 
-switchColorButton.addEventListener('click', switchColorMode);
+function localColorTheme() {
+	localStorage.setItem("switchColorTheme", switchColorMode())
+	console.log(localStorage.getItem("switchColorTheme"));
+};
+
+
+const switchMode = switchColorButton.addEventListener('click', localColorTheme);
+
+console.log(localStorage.getItem("switchColorTheme"));
+
 
 // function lightMode() {
 
