@@ -39,11 +39,11 @@ function switchColorMode() {
 	console.log(lightMode + " first");
 	if(lightMode){
 	localStorage.removeItem("switchColorTheme");
-	console.log(lightMode + " second");
+	console.log(localStorage.getItem("switchColorTheme") + " second");
 	} else if (!lightMode) {
 	localStorage.setItem("switchColorTheme", "lightMode")
 	console.log(localStorage.getItem("switchColorTheme"));
-	console.log(lightMode + " third");
+	console.log(localStorage.getItem("switchColorTheme") + " third");
 		htmlTag.classList.toggle('html-color');
 
 		for (const img of imgTags) {
