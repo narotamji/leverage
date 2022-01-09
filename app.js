@@ -35,16 +35,21 @@ console.log(localStorage.getItem("switchColorTheme"));
 // const lightMode = localStorage.getItem("switchColorTheme");
 
 function switchColorMode() {
+	let lightMode = localStorage.getItem("switchColorTheme");
+	console.log(lightMode" first"));
+	if(lightMode){
+	localStorage.removeItem("switchColorTheme");
+	console.log(lightMode" second"));
+	} else if (!lightMode) {
 	localStorage.setItem("switchColorTheme", "lightMode")
 	console.log(localStorage.getItem("switchColorTheme"));
-	const lightMode = localStorage.getItem("switchColorTheme");
-	if(lightMode) {
+	console.log(lightMode" third"));
+	}
 		htmlTag.classList.toggle('html-color');
 
 		for (const img of imgTags) {
 			img.classList.toggle('img-color');
 		}
-	}
 };
 
 switchColorButton.addEventListener('click', switchColorMode);
