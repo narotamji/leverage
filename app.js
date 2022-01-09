@@ -35,19 +35,28 @@ console.log(localStorage.getItem("switchColorTheme"));
 // const lightMode = localStorage.getItem("switchColorTheme");
 
 function switchColorMode() {
-	let lightMode = localStorage.getItem("switchColorTheme");
-	console.log(lightMode + " first");
-	if(lightMode){
+// 	let lightMode = localStorage.getItem("switchColorTheme");
+	console.log(localStorage.getItem("switchColorTheme") + " first");
+	
+	if(localStorage.getItem("switchColorTheme"))
+	{
 	localStorage.removeItem("switchColorTheme");
 	console.log(localStorage.getItem("switchColorTheme") + " second");
-	} else if (!lightMode) {
-	localStorage.setItem("switchColorTheme", "lightMode")
-	console.log(localStorage.getItem("switchColorTheme"));
-	console.log(localStorage.getItem("switchColorTheme") + " third");
-		htmlTag.classList.toggle('html-color');
+		htmlTag.classList.remove('html-color');
 
 		for (const img of imgTags) {
-			img.classList.toggle('img-color');
+			img.classList.remove('img-color');
+		}
+	} 
+	else if (!localStorage.getItem("switchColorTheme")) 
+	{
+	localStorage.setItem("switchColorTheme", "lightMode")
+	console.log(localStorage.getItem("switchColorTheme") + " third");
+		
+		htmlTag.classList.add('html-color');
+
+		for (const img of imgTags) {
+			img.classList.add('img-color');
 		}
 	}
 };
