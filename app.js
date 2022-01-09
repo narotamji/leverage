@@ -28,26 +28,16 @@ if(localStorage.getItem("switchColorTheme")){
 			img.classList.add('img-color');
 		}}
 
-// function localColorTheme() {
-// 	localStorage.setItem("switchColorTheme", "lightMode")
-// 	console.log(localStorage.getItem("switchColorTheme"));
-// };
-
-
-// switchColorButton.addEventListener('click', localColorTheme);
-
-console.log(localStorage.getItem("switchColorTheme"));
-
-// const lightMode = localStorage.getItem("switchColorTheme");
+// console.log(localStorage.getItem("switchColorTheme"));
 
 function switchColorMode() {
-// 	let lightMode = localStorage.getItem("switchColorTheme");
-	console.log(localStorage.getItem("switchColorTheme") + " first");
+	
+// 	console.log(localStorage.getItem("switchColorTheme") + " first");
 	
 	if(localStorage.getItem("switchColorTheme"))
 	{
 	localStorage.removeItem("switchColorTheme");
-	console.log(localStorage.getItem("switchColorTheme") + " second");
+// 	console.log(localStorage.getItem("switchColorTheme") + " second");
 		
 		if(!localStorage.getItem("switchColorTheme")){
 		htmlTag.classList.remove('html-color');
@@ -59,7 +49,7 @@ function switchColorMode() {
 	else if (!localStorage.getItem("switchColorTheme")) 
 	{
 	localStorage.setItem("switchColorTheme", "lightMode")
-	console.log(localStorage.getItem("switchColorTheme") + " third");
+// 	console.log(localStorage.getItem("switchColorTheme") + " third");
 		
 		if(localStorage.getItem("switchColorTheme")){
 		htmlTag.classList.add('html-color');
@@ -71,13 +61,3 @@ function switchColorMode() {
 };
 
 switchColorButton.addEventListener('click', switchColorMode);
-
-// function lightMode() {
-
-// 	htmlTag.classList.add('html-color');
-
-// 	for (const img of imgTags) {
-// 		img.classList.add('img-color');
-// 	}
-
-// }
