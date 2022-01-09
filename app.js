@@ -36,14 +36,14 @@ console.log(localStorage.getItem("switchColorTheme"));
 
 function switchColorMode() {
 	let lightMode = localStorage.getItem("switchColorTheme");
-	console.log(lightMode" first"));
+	console.log(lightMode + " first");
 	if(lightMode){
 	localStorage.removeItem("switchColorTheme");
-	console.log(lightMode" second"));
+	console.log(lightMode + " second");
 	} else if (!lightMode) {
 	localStorage.setItem("switchColorTheme", "lightMode")
 	console.log(localStorage.getItem("switchColorTheme"));
-	console.log(lightMode" third"));
+	console.log(lightMode + " third");
 		htmlTag.classList.toggle('html-color');
 
 		for (const img of imgTags) {
