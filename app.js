@@ -21,6 +21,12 @@ const switchColorButton = document.getElementById('switch-color__mode');
 const htmlTag = document.getElementById('HTML');
 const imgTags = document.querySelectorAll('img');
 
+if(localStorage.getItem("switchColorTheme")){
+		htmlTag.classList.add('html-color');
+
+		for (const img of imgTags) {
+			img.classList.add('img-color');
+		}}
 
 // function localColorTheme() {
 // 	localStorage.setItem("switchColorTheme", "lightMode")
@@ -42,22 +48,25 @@ function switchColorMode() {
 	{
 	localStorage.removeItem("switchColorTheme");
 	console.log(localStorage.getItem("switchColorTheme") + " second");
+		
+		if(!localStorage.getItem("switchColorTheme")){
 		htmlTag.classList.remove('html-color');
 
 		for (const img of imgTags) {
 			img.classList.remove('img-color');
-		}
+		}}
 	} 
 	else if (!localStorage.getItem("switchColorTheme")) 
 	{
 	localStorage.setItem("switchColorTheme", "lightMode")
 	console.log(localStorage.getItem("switchColorTheme") + " third");
 		
+		if(localStorage.getItem("switchColorTheme")){
 		htmlTag.classList.add('html-color');
 
 		for (const img of imgTags) {
 			img.classList.add('img-color');
-		}
+		}}
 	}
 };
 
