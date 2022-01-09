@@ -44,12 +44,12 @@ function switchColorMode() {
 	localStorage.setItem("switchColorTheme", "lightMode")
 	console.log(localStorage.getItem("switchColorTheme"));
 	console.log(lightMode" third"));
-	}
 		htmlTag.classList.toggle('html-color');
 
 		for (const img of imgTags) {
 			img.classList.toggle('img-color');
 		}
+	}
 };
 
 switchColorButton.addEventListener('click', switchColorMode);
