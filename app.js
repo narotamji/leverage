@@ -21,26 +21,33 @@ const switchColorButton = document.getElementById('switch-color__mode');
 const htmlTag = document.getElementById('HTML');
 const imgTags = document.querySelectorAll('img');
 
-function switchColorMode() {
 
-	htmlTag.classList.toggle('html-color');
-
-	for (const img of imgTags) {
-		img.classList.toggle('img-color');
-	}
-
-}
-
-function localColorTheme() {
-	localStorage.setItem("switchColorTheme", switchColorMode())
-	console.log(localStorage.getItem("switchColorTheme"));
-};
+// function localColorTheme() {
+// 	localStorage.setItem("switchColorTheme", "lightMode")
+// 	console.log(localStorage.getItem("switchColorTheme"));
+// };
 
 
-const switchMode = switchColorButton.addEventListener('click', localColorTheme);
+// switchColorButton.addEventListener('click', localColorTheme);
 
 console.log(localStorage.getItem("switchColorTheme"));
 
+// const lightMode = localStorage.getItem("switchColorTheme");
+
+function switchColorMode() {
+	localStorage.setItem("switchColorTheme", "lightMode")
+	console.log(localStorage.getItem("switchColorTheme"));
+	const lightMode = localStorage.getItem("switchColorTheme");
+	if(lightMode) {
+		htmlTag.classList.toggle('html-color');
+
+		for (const img of imgTags) {
+			img.classList.toggle('img-color');
+		}
+	}
+};
+
+switchColorButton.addEventListener('click', switchColorMode);
 
 // function lightMode() {
 
